@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dashboard | Portal Prefeitura Vila Bela MT</title>
+
+  <meta name="description" content="Dashboard institucional da Prefeitura de Vila Bela da Santíssima Trindade-MT com indicadores, gráficos e dados estratégicos da gestão pública." />
+  <meta name="theme-color" content="#0b1f3a" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand">
+        <img src="assets/logos/logo-prefeitura.png" alt="Logo Prefeitura Vila Bela MT" class="brand-logo" />
+        <div>
+          <strong>Prefeitura de Vila Bela MT</strong>
+          <span>Dashboard de Gestão</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Início</a>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="noticias.html">Notícias</a>
+        <a href="cultura.html">Cultura</a>
+        <a href="turismo.html">Turismo</a>
+        <a href="transparencia.html">Transparência</a>
+        <a href="gabinete.html">Gabinete</a>
+        <a href="admin.html" class="nav-admin">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero page-hero dashboard-hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">Painel Estratégico</span>
+
+          <h1>
+            Dashboard de
+            <span>Gestão Pública</span>
+          </h1>
+
+          <p>
+            Indicadores institucionais, dados estratégicos e visão executiva
+            para acompanhamento da gestão municipal de Vila Bela da Santíssima
+            Trindade.
+          </p>
+
+          <div class="hero-actions">
+            <a href="transparencia.html" class="btn btn-primary">Ver Transparência</a>
+            <a href="admin.html" class="btn btn-outline">Área Admin</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h2>Resumo Executivo</h2>
+          <p>
+            Painel inicial preparado para integração com dados públicos,
+            Firebase, APIs e gráficos dinâmicos.
+          </p>
+
+          <div class="mini-stats">
+            <div>
+              <strong>24</strong>
+              <span>Indicadores</span>
+            </div>
+            <div>
+              <strong>6</strong>
+              <span>Eixos</span>
+            </div>
+            <div>
+              <strong>V1</strong>
+              <span>Base</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Indicadores</span>
+          <h2>Visão Geral da Gestão</h2>
+          <p>
+            Cards preparados para receber dados reais da gestão pública,
+            transparência, turismo, cultura e serviços municipais.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="feature-card">
+            <span class="icon">💰</span>
+            <h3>Receitas</h3>
+            <p>Estimativa, arrecadação e evolução das receitas municipais.</p>
+            <strong class="dashboard-number">R$ 0,00</strong>
+          </article>
+
+          <article class="feature-card">
+            <span class="icon">📉</span>
+            <h3>Despesas</h3>
+            <p>Execução orçamentária, empenhos, liquidações e pagamentos.</p>
+            <strong class="dashboard-number">R$ 0,00</strong>
+          </article>
+
+          <article class="feature-card">
+            <span class="icon">👥</span>
+            <h3>Servidores</h3>
+            <p>Quadro funcional, vínculos, lotações e gestão de pessoas.</p>
+            <strong class="dashboard-number">0</strong>
+          </article>
+
+          <article class="feature-card">
+            <span class="icon">🏗️</span>
+            <h3>Obras</h3>
+            <p>Acompanhamento de obras, convênios e investimentos.</p>
+            <strong class="dashboard-number">0</strong>
+          </article>
+
+          <article class="feature-card">
+            <span class="icon">🌿</span>
+            <h3>Turismo</h3>
+            <p>Potencial turístico, atrativos e roteiros municipais.</p>
+            <strong class="dashboard-number">0</strong>
+          </article>
+
+          <article class="feature-card">
+            <span class="icon">🎭</span>
+            <h3>Cultura</h3>
+            <p>Patrimônio, eventos, manifestações e memória vilabelense.</p>
+            <strong class="dashboard-number">0</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-highlight">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Gráficos</span>
+          <h2>Painéis Analíticos</h2>
+          <p>
+            Estrutura pronta para exibir dados reais com Chart.js.
+          </p>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="chart-card">
+            <h3>Receitas x Despesas</h3>
+            <canvas id="financeChart"></canvas>
+          </article>
+
+          <article class="chart-card">
+            <h3>Distribuição por Eixo</h3>
+            <canvas id="sectorChart"></canvas>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Governança</span>
+          <h2>Base para integração com dados públicos</h2>
+          <p>
+            Este dashboard foi estruturado para evoluir com dados municipais,
+            arquivos JSON, Firebase, APIs oficiais e módulos de inteligência
+            institucional.
+          </p>
+
+          <ul class="check-list">
+            <li>Indicadores financeiros e administrativos</li>
+            <li>Gráficos dinâmicos com Chart.js</li>
+            <li>Estrutura preparada para dados reais</li>
+            <li>Compatível com temas claro, escuro e contraste</li>
+          </ul>
+        </div>
+
+        <div class="glass-panel">
+          <h3>Status Técnico</h3>
+          <p>HTML base: concluído.</p>
+          <p>CSS global: compatível.</p>
+          <p>JS de temas/menu: ativo.</p>
+          <p>Próxima etapa: dados e gráficos dinâmicos.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Portal Prefeitura Vila Bela MT</h3>
+        <p>
+          Dashboard institucional para acompanhamento da gestão pública
+          municipal.
+        </p>
+      </div>
+
+      <div>
+        <h4>Navegação</h4>
+        <a href="index.html">Início</a>
+        <a href="transparencia.html">Transparência</a>
+        <a href="noticias.html">Notícias</a>
+      </div>
+
+      <div>
+        <h4>Módulos</h4>
+        <a href="cultura.html">Cultura</a>
+        <a href="turismo.html">Turismo</a>
+        <a href="gabinete.html">Gabinete</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Portal Prefeitura Vila Bela MT — Dashboard em evolução.</p>
+    </div>
+  </footer>
+
+  <button class="theme-button" id="themeButton" title="Alternar tema">◐</button>
+
+  <script src="js/script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const financeCtx = document.getElementById("financeChart");
+      const sectorCtx = document.getElementById("sectorChart");
+
+      if (financeCtx) {
+        new Chart(financeCtx, {
+          type: "bar",
+          data: {
+            labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+            datasets: [
+              {
+                label: "Receitas",
+                data: [120, 150, 180, 160, 210, 240]
+              },
+              {
+                label: "Despesas",
+                data: [90, 130, 140, 155, 175, 200]
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: "bottom"
+              }
+            }
+          }
+        });
+      }
+
+      if (sectorCtx) {
+        new Chart(sectorCtx, {
+          type: "doughnut",
+          data: {
+            labels: ["Administração", "Educação", "Saúde", "Turismo", "Cultura"],
+            datasets: [
+              {
+                label: "Distribuição",
+                data: [25, 30, 28, 10, 7]
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: "bottom"
+              }
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
