@@ -930,3 +930,31 @@ body.contrast-theme .chart-card h3 {
 /* =========================================================
    FINAL: NOTÍCIAS
    ========================================================= */
+
+/* =========================================================
+   INÍCIO: PATCH INSTITUCIONAL V2
+   ========================================================= */
+
+.institutional-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.institutional-links a {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--dourado);
+  border: 1px solid rgba(207, 174, 61, 0.35);
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+.institutional-links a:hover {
+  background: rgba(207, 174, 61, 0.12);
+}
+
+/* =========================================================
+   FINAL: PATCH INSTITUCIONAL V2
+   ========================================================= */
