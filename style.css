@@ -852,3 +852,63 @@ body.contrast-theme .btn-outline {
 /* =========================================================
    FINAL: RESPONSIVIDADE MOBILE
    ========================================================= */
+
+/* =========================================================
+   INÍCIO: DASHBOARD
+   ========================================================= */
+
+.dashboard-number {
+  display: block;
+  margin-top: 18px;
+  font-size: 1.6rem;
+  color: var(--dourado);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.chart-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: var(--sombra-suave);
+  border: 1px solid rgba(11,31,58,0.08);
+}
+
+.chart-card h3 {
+  color: var(--azul-profundo);
+  margin-bottom: 22px;
+  font-size: 1.35rem;
+}
+
+body.dark-theme .chart-card {
+  background: linear-gradient(145deg, #0b1f3a, #102b4c);
+  border-color: rgba(255,255,255,0.08);
+}
+
+body.dark-theme .chart-card h3 {
+  color: #ffffff;
+}
+
+body.contrast-theme .chart-card {
+  background: #000000;
+  border: 2px solid #ffffff;
+  box-shadow: none;
+}
+
+body.contrast-theme .chart-card h3 {
+  color: #ffffff;
+}
+
+@media (max-width: 860px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   FINAL: DASHBOARD
+   ========================================================= */
