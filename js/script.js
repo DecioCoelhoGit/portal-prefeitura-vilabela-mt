@@ -93,6 +93,38 @@ function initThemeSystem() {
   }
 }
 
+// MENU
+document.getElementById("menuToggle").onclick = () => {
+  document.getElementById("nav").classList.toggle("active");
+};
+
+// TEMA
+const themeBtn = document.getElementById("themeToggle");
+themeBtn.onclick = () => {
+  document.body.classList.toggle("dark");
+};
+
+// ACESSIBILIDADE
+const accessBtn = document.getElementById("accessBtn");
+const accessPanel = document.getElementById("accessPanel");
+
+accessBtn.onclick = () => {
+  accessPanel.classList.toggle("show");
+};
+
+function setFont(scale) {
+  document.body.style.fontSize = scale + "em";
+}
+
+function setContrast() {
+  document.body.classList.toggle("contrast");
+}
+
+function resetAccess() {
+  document.body.style.fontSize = "1em";
+  document.body.classList.remove("contrast");
+}
+
 /* =========================================================
    FINAL: SISTEMA DE TEMAS
    ========================================================= */
