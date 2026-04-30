@@ -50,6 +50,12 @@ function initMobileMenu() {
    3. contraste
    ========================================================= */
 
+MENU
+document.getElementById("menuToggle").onclick = () => {
+  document.getElementById("nav").classList.toggle("active");
+};
+
+
 const themeBtn = document.getElementById("themeToggle");
 
 themeBtn.onclick = () => {
