@@ -355,3 +355,31 @@ body.contrast * {
     width: auto;
   }
        }
+
+/* TEMA CLARO REAL */
+body.light {
+  --bg: #f4f7fb;
+  --bg-2: #ffffff;
+  --card: #ffffff;
+  --text: #102033;
+  --muted: #516070;
+}
+
+body.light .header {
+  background: rgba(255,255,255,0.96);
+}
+
+body.light .nav,
+body.light .access-panel {
+  background: #ffffff;
+}
+
+body.light .card,
+body.light .box {
+  background: #ffffff;
+  color: #102033;
+}
+
+body.light .footer {
+  background: #ffffff;
+}
