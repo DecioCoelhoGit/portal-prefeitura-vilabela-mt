@@ -360,8 +360,6 @@ body.light .footer {
   background: #ffffff;
 }
 
-
-/* TEMA CLARO REAL */
 body.light {
   --bg: #f4f7fb;
   --bg-2: #ffffff;
@@ -374,13 +372,20 @@ body.light .header {
   background: rgba(255,255,255,0.96);
 }
 
-body.light .nav,
-body.light .access-panel {
-  background: #ffffff;
+body.light .logo h1,
+body.light .logo span,
+body.light .nav a {
+  color: #102033;
 }
 
 body.light .card,
-body.light .box {
+body.light .box,
+body.light .access-panel {
   background: #ffffff;
   color: #102033;
+}
+
+body.light .footer {
+  background: #ffffff;
+  color: #516070;
 }
