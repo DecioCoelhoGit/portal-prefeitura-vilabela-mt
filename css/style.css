@@ -356,6 +356,11 @@ body.contrast * {
   }
        }
 
+body.light .footer {
+  background: #ffffff;
+}
+
+
 /* TEMA CLARO REAL */
 body.light {
   --bg: #f4f7fb;
@@ -378,8 +383,4 @@ body.light .card,
 body.light .box {
   background: #ffffff;
   color: #102033;
-}
-
-body.light .footer {
-  background: #ffffff;
 }
