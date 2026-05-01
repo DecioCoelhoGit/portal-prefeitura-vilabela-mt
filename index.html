@@ -1,193 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Portal Prefeitura de Vila Bela da Santíssima Trindade - MT</title>
-
-<meta name="description" content="Portal oficial da Prefeitura de Vila Bela da Santíssima Trindade - MT. Transparência, serviços, turismo, cultura e gestão pública digital integrada." />
-
-<link rel="canonical" href="https://deciocoelhogit.github.io/portal-prefeitura-vilabela-mt/" />
-
-<!-- OG -->
-<meta property="og:title" content="Portal Prefeitura Vila Bela MT">
-<meta property="og:description" content="Transparência, serviços e gestão pública inteligente.">
-<meta property="og:image" content="https://deciocoelhogit.github.io/portal-prefeitura-vilabela-mt/assets/banners/portal-og-1.jpg">
-<meta property="og:url" content="https://deciocoelhogit.github.io/portal-prefeitura-vilabela-mt/">
-<meta property="og:type" content="website">
-
-<!-- CSS -->
-<link rel="stylesheet" href="css/style.css?v=8">
-<script src="js/script.js?v=8" defer></script>
-
-<!-- Favicon -->
-<link rel="icon" href="assets/icons/favicon.ico">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Prefeitura Vila Bela MT</title>
+  <meta name="description" content="Portal institucional da Prefeitura de Vila Bela da Santíssima Trindade - MT. Transparência, notícias, turismo, cultura e gestão pública digital.">
+  <link rel="stylesheet" href="css/style.css?v=8">
 </head>
 
 <body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/logos/vilabela-brasao-1.png" alt="Brasão Vila Bela MT">
+      <span>Portal<br>Prefeitura</span>
+    </a>
 
-<!-- HEADER -->
-<header class="site-header">
-  <a class="brand" href="index.html" aria-label="Portal Prefeitura Vila Bela MT">
-    <img src="assets/logos/vilabela-brasao-1.png" alt="Brasão de Vila Bela MT">
-    <span>Portal<br>Prefeitura</span>
-  </a>
-
-  <div class="header-actions">
-    <button id="menuToggle" class="icon-btn" type="button" aria-label="Abrir menu">☰</button>
-    <button id="themeToggle" class="icon-btn" type="button" aria-label="Alternar tema">🌙</button>
-    <button id="accessBtn" class="icon-btn" type="button" aria-label="Abrir acessibilidade">♿</button>
-  </div>
-
-  <nav id="nav" class="main-nav" aria-label="Menu principal">
-    <a href="index.html">Início</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="noticias.html">Notícias</a>
-    <a href="cultura.html">Cultura</a>
-    <a href="turismo.html">Turismo</a>
-    <a href="transparencia.html">Transparência</a>
-    <a href="gabinete.html">Gabinete</a>
-    <a href="admin.html">Admin</a>
-  </nav>
-</header>
-
-<div id="accessPanel" class="access-panel" aria-label="Painel de acessibilidade">
-  <h2>Acessibilidade</h2>
-  <button type="button" onclick="setFont(1)">A</button>
-  <button type="button" onclick="setFont(1.15)">A+</button>
-  <button type="button" onclick="setFont(1.3)">A++</button>
-  <button type="button" onclick="setContrast()">Contraste</button>
-  <button type="button" onclick="resetAccess()">Reset</button>
-</div>
-   
-</header>
-
-<!-- HERO -->
-<section class="hero">
-
-  <img src="assets/banners/vilabela-capa-oficial-1.jpg" class="hero-bg">
-
-  <div class="hero-content">
-
-    <h2>Gestão pública digital com identidade e transparência</h2>
-
-    <p>
-      Um portal moderno para integrar serviços, dados públicos,
-      turismo, cultura e governança digital.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="transparencia.html" class="btn primary">Portal da Transparência</a>
-      <a href="noticias.html" class="btn">Notícias Oficiais</a>
+    <div class="header-actions">
+      <button id="menuToggle" class="icon-btn" type="button">☰</button>
+      <button id="themeToggle" class="icon-btn" type="button">🌙</button>
+      <button id="accessBtn" class="icon-btn" type="button">♿</button>
     </div>
 
+    <nav id="nav" class="main-nav">
+      <a href="index.html">Início</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="noticias.html">Notícias</a>
+      <a href="cultura.html">Cultura</a>
+      <a href="turismo.html">Turismo</a>
+      <a href="transparencia.html">Transparência</a>
+      <a href="gabinete.html">Gabinete</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <div id="accessPanel" class="access-panel">
+    <h2>Acessibilidade</h2>
+    <button onclick="setFont(1)">A</button>
+    <button onclick="setFont(1.15)">A+</button>
+    <button onclick="setFont(1.3)">A++</button>
+    <button onclick="setContrast()">Contraste</button>
+    <button onclick="resetAccess()">Reset</button>
   </div>
 
-</section>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Gestão pública digital com identidade e transparência</h1>
+        <p>Um portal moderno para integrar serviços, dados públicos, turismo, cultura e governança digital.</p>
+        <div class="hero-actions">
+          <a href="transparencia.html" class="btn-primary">Portal da Transparência</a>
+          <a href="noticias.html" class="btn-secondary">Notícias Oficiais</a>
+        </div>
+      </div>
+    </section>
 
-<!-- MÓDULOS -->
-<section class="modules container">
+    <section class="section">
+      <h2>Módulos do Portal</h2>
+      <div class="grid">
+        <a class="card" href="dashboard.html"><span>📊</span><h3>Dashboard</h3><p>Indicadores e visão estratégica da gestão.</p></a>
+        <a class="card" href="noticias.html"><span>📰</span><h3>Notícias</h3><p>Comunicados e informações oficiais.</p></a>
+        <a class="card" href="cultura.html"><span>🎭</span><h3>Cultura</h3><p>Patrimônio histórico e identidade vilabelense.</p></a>
+        <a class="card" href="turismo.html"><span>🌿</span><h3>Turismo</h3><p>Roteiros e atrativos naturais.</p></a>
+        <a class="card" href="transparencia.html"><span>📁</span><h3>Transparência</h3><p>Receitas, despesas e dados públicos.</p></a>
+        <a class="card" href="gabinete.html"><span>🏛️</span><h3>Gabinete</h3><p>Agenda institucional e gestão executiva.</p></a>
+      </div>
+    </section>
 
-  <h2>Módulos do Portal</h2>
+    <section class="section">
+      <h2>Destaques Institucionais</h2>
+      <div class="grid">
+        <div class="card"><h3>Portal em evolução</h3><p>Base digital escalável para serviços públicos e inteligência de dados.</p></div>
+        <div class="card"><h3>Turismo estratégico</h3><p>Valorização do potencial natural e histórico do município.</p></div>
+        <div class="card"><h3>Cultura viva</h3><p>Preservação da identidade vilabelense.</p></div>
+      </div>
+    </section>
+  </main>
 
-  <div class="grid">
+  <footer>
+    © 2026 Prefeitura de Vila Bela da Santíssima Trindade - MT · Gestão Pública Inteligente
+  </footer>
 
-    <a href="dashboard.html" class="card">
-      📊
-      <h3>Dashboard</h3>
-      <p>Indicadores e visão estratégica da gestão.</p>
-    </a>
-
-    <a href="noticias.html" class="card">
-      📰
-      <h3>Notícias</h3>
-      <p>Comunicados e informações oficiais.</p>
-    </a>
-
-    <a href="cultura.html" class="card">
-      🎭
-      <h3>Cultura</h3>
-      <p>Patrimônio histórico e identidade vilabelense.</p>
-    </a>
-
-    <a href="turismo.html" class="card">
-      🌿
-      <h3>Turismo</h3>
-      <p>Roteiros e atrativos naturais.</p>
-    </a>
-
-    <a href="transparencia.html" class="card">
-      📂
-      <h3>Transparência</h3>
-      <p>Receitas, despesas e dados públicos.</p>
-    </a>
-
-    <a href="gabinete.html" class="card">
-      🏛
-      <h3>Gabinete</h3>
-      <p>Agenda institucional e gestão executiva.</p>
-    </a>
-
-  </div>
-
-</section>
-
-<!-- DESTAQUES -->
-<section class="highlights container">
-
-  <h2>Destaques Institucionais</h2>
-
-  <div class="grid">
-
-    <div class="box">
-      <h3>Portal em evolução</h3>
-      <p>Base digital escalável para serviços públicos e inteligência de dados.</p>
-    </div>
-
-    <div class="box">
-      <h3>Turismo estratégico</h3>
-      <p>Valorização do potencial natural e histórico do município.</p>
-    </div>
-
-    <div class="box">
-      <h3>Cultura viva</h3>
-      <p>Preservação da identidade vilabelense.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ACESSIBILIDADE PANEL -->
-<div id="accessPanel" class="access-panel">
-
-  <h3>Acessibilidade</h3>
-
-  <button onclick="setFont(1)">A</button>
-  <button onclick="setFont(1.2)">A+</button>
-  <button onclick="setFont(1.4)">A++</button>
-
-  <button onclick="setContrast()">Contraste</button>
-
-  <button onclick="resetAccess()">Reset</button>
-
-</div>
-
-<!-- FOOTER -->
-<footer class="footer">
-
-  <p>
-    © 2026 Prefeitura de Vila Bela da Santíssima Trindade - MT  
-    • Gestão Pública Inteligente
-  </p>
-
-</footer>
-
-<!-- SCRIPT -->
-<script src="js/script.js?v=13"></script>
-
+  <script src="js/script.js?v=8"></script>
 </body>
 </html>
