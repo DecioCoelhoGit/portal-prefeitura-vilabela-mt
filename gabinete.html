@@ -16,33 +16,38 @@
 
 <body>
 
-<header class="header">
-  <div class="container header-content">
-    <a href="index.html" class="logo">
-      <img src="assets/logos/vilabela-brasao-1-transparente.png" alt="Brasão Vila Bela MT">
-      <div>
-        <h1>Portal Prefeitura</h1>
-        <span>Gabinete Municipal</span>
-      </div>
-    </a>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Portal Prefeitura Vila Bela MT">
+    <img src="assets/logos/vilabela-brasao-1.png" alt="Brasão de Vila Bela MT">
+    <span>Portal<br>Prefeitura</span>
+  </a>
 
-    <nav class="nav" id="nav">
-      <a href="index.html">Início</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="noticias.html">Notícias</a>
-      <a href="cultura.html">Cultura</a>
-      <a href="turismo.html">Turismo</a>
-      <a href="transparencia.html">Transparência</a>
-      <a href="gabinete.html">Gabinete</a>
-      <a href="admin.html">Admin</a>
-    </nav>
-
-    <div class="actions">
-      <button id="menuToggle">☰</button>
-      <button id="themeToggle">🌙</button>
-      <button id="accessBtn">♿</button>
-    </div>
+  <div class="header-actions">
+    <button id="menuToggle" class="icon-btn" type="button" aria-label="Abrir menu">☰</button>
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="Alternar tema">🌙</button>
+    <button id="accessBtn" class="icon-btn" type="button" aria-label="Abrir acessibilidade">♿</button>
   </div>
+
+  <nav id="nav" class="main-nav" aria-label="Menu principal">
+    <a href="index.html">Início</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="noticias.html">Notícias</a>
+    <a href="cultura.html">Cultura</a>
+    <a href="turismo.html">Turismo</a>
+    <a href="transparencia.html">Transparência</a>
+    <a href="gabinete.html">Gabinete</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+</header>
+
+<div id="accessPanel" class="access-panel" aria-label="Painel de acessibilidade">
+  <h2>Acessibilidade</h2>
+  <button type="button" onclick="setFont(1)">A</button>
+  <button type="button" onclick="setFont(1.15)">A+</button>
+  <button type="button" onclick="setFont(1.3)">A++</button>
+  <button type="button" onclick="setContrast()">Contraste</button>
+  <button type="button" onclick="resetAccess()">Reset</button>
+</div>
 </header>
 
 <section class="hero">
@@ -174,7 +179,7 @@
   <p>© 2026 Prefeitura de Vila Bela da Santíssima Trindade - MT • Gabinete Municipal</p>
 </footer>
 
-<script src="js/script.js?v=11"></script>
+<script src="js/script.js?v=13"></script>
 
 </body>
 </html>
