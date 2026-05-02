@@ -61,3 +61,31 @@
     localStorage.removeItem("portal-font");
   };
 })();
+
+/* PATCH V9.3 — FONTE ACESSÍVEL */
+window.setFont = function(scale){
+  document.body.classList.remove("font-normal","font-large","font-xlarge");
+  if(scale === 1.15){
+    document.body.classList.add("font-large");
+    localStorage.setItem("portal-font-class","font-large");
+  }else if(scale === 1.3){
+    document.body.classList.add("font-xlarge");
+    localStorage.setItem("portal-font-class","font-xlarge");
+  }else{
+    document.body.classList.add("font-normal");
+    localStorage.setItem("portal-font-class","font-normal");
+  }
+};
+
+window.resetAccess = function(){
+  document.body.classList.remove("font-normal","font-large","font-xlarge","contrast");
+  document.body.classList.add("font-normal");
+  localStorage.removeItem("portal-font-class");
+};
+
+document.addEventListener("DOMContentLoaded", function(){
+  const savedFont = localStorage.getItem("portal-font-class");
+  if(savedFont){
+    document.body.classList.add(savedFont);
+  }
+});
