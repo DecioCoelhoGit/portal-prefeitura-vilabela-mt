@@ -342,3 +342,99 @@ body.contrast{
     max-width:560px;
   }
 }
+
+/* PATCH V9.1 — FIX HEADER, MOBILE, ACCESS */
+.site-header{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  z-index:99999 !important;
+}
+
+body{
+  padding-top:82px !important;
+}
+
+.hero,
+.section,
+footer{
+  width:100% !important;
+  max-width:100% !important;
+  overflow-x:hidden !important;
+}
+
+.card,
+.hero-content,
+.grid{
+  max-width:100% !important;
+}
+
+.access-panel{
+  left:14px !important;
+  right:14px !important;
+  max-width:calc(100vw - 28px) !important;
+  overflow:hidden !important;
+}
+
+body.font-normal{font-size:1rem !important;}
+body.font-large{font-size:1.12rem !important;}
+body.font-xlarge{font-size:1.25rem !important;}
+
+body.contrast{
+  background:#000 !important;
+  color:#fff !important;
+}
+
+body.contrast .card,
+body.contrast .site-header,
+body.contrast .main-nav,
+body.contrast .access-panel{
+  background:#000 !important;
+  color:#fff !important;
+  border:2px solid #fff !important;
+  box-shadow:none !important;
+}
+
+body.contrast a,
+body.contrast h1,
+body.contrast h2,
+body.contrast h3{
+  color:#ffff00 !important;
+}
+
+body.contrast .btn-primary{
+  background:#ffff00 !important;
+  color:#000 !important;
+}
+
+@media(max-width:480px){
+  .site-header{
+    padding:10px 12px !important;
+  }
+
+  .brand img{
+    width:48px !important;
+    height:48px !important;
+  }
+
+  .brand{
+    font-size:15px !important;
+  }
+
+  .icon-btn{
+    width:46px !important;
+    height:46px !important;
+    border-radius:14px !important;
+  }
+
+  .hero{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .section{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+}
