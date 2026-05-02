@@ -1,0 +1,70 @@
+{
+  "name": "Portal Prefeitura Vila Bela MT",
+  "short_name": "Portal Prefeitura",
+  "description": "Portal digital institucional da Prefeitura de Vila Bela da Santíssima Trindade MT.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/logos/vilabela-brasao-1-transparente.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logos/vilabela-brasao-1-transparente.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+nano sw.js
+const CACHE_NAME = "portal-prefeitura-v11";
+
+const FILES_TO_CACHE = [
+  "./",
+  "./index.html",
+  "./dashboard.html",
+  "./noticias.html",
+  "./cultura.html",
+  "./turismo.html",
+  "./transparencia.html",
+  "./gabinete.html",
+  "./admin.html",
+  "./css/style.css",
+  "./js/script.js",
+  "./manifest.json",
+  "./assets/logos/vilabela-brasao-1-transparente.png"
+];
+
+self.addEventListener("install", event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
+  );
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(
+        keys.map(key => {
+          if (key !== CACHE_NAME) return caches.delete(key);
+        })
+      )
+    )
+  );
+  self.clients.claim();
+});
+
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request);
+    })
+  );
+});
+
