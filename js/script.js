@@ -121,3 +121,37 @@ document.addEventListener("DOMContentLoaded", function(){
     document.body.classList.add(saved);
   }
 });
+
+/* PATCH V9.5 FINAL — troca direta dos botões A */
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll("button, .access-panel button").forEach(function(btn){
+    const txt = (btn.textContent || "").trim();
+
+    if(txt === "A"){
+      btn.onclick = function(e){
+        e.preventDefault();
+        document.body.classList.remove("font-ap","font-app");
+        document.body.classList.add("font-a");
+        localStorage.setItem("portal-font-size","font-a");
+      };
+    }
+
+    if(txt === "A+"){
+      btn.onclick = function(e){
+        e.preventDefault();
+        document.body.classList.remove("font-a","font-app");
+        document.body.classList.add("font-ap");
+        localStorage.setItem("portal-font-size","font-ap");
+      };
+    }
+
+    if(txt === "A++"){
+      btn.onclick = function(e){
+        e.preventDefault();
+        document.body.classList.remove("font-a","font-ap");
+        document.body.classList.add("font-app");
+        localStorage.setItem("portal-font-size","font-app");
+      };
+    }
+  });
+});

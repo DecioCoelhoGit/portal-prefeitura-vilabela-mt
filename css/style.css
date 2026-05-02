@@ -657,3 +657,112 @@ body.font-app h1{
 .access-panel button{
   min-height:48px !important;
 }
+
+/* PATCH V9.5 FINAL — HEADER FIXO + ACESSIBILIDADE REAL */
+body{
+  --font-boost: 1;
+}
+
+body.font-a{ --font-boost: 1; }
+body.font-ap{ --font-boost: 1.14; }
+body.font-app{ --font-boost: 1.28; }
+
+body.font-ap,
+body.font-app{
+  font-size: calc(16px * var(--font-boost)) !important;
+}
+
+body.font-ap p,
+body.font-ap a,
+body.font-ap button,
+body.font-ap li,
+body.font-ap span,
+body.font-app p,
+body.font-app a,
+body.font-app button,
+body.font-app li,
+body.font-app span{
+  font-size: calc(1em * var(--font-boost)) !important;
+}
+
+body.font-ap h1{ font-size: clamp(2.2rem, 10vw, 4.8rem) !important; }
+body.font-app h1{ font-size: clamp(2.5rem, 11vw, 5.4rem) !important; }
+
+body.font-ap h2{ font-size: clamp(1.8rem, 7vw, 3.2rem) !important; }
+body.font-app h2{ font-size: clamp(2rem, 8vw, 3.6rem) !important; }
+
+/* Cabeçalho realmente fixo no mobile */
+.site-header,
+header.site-header,
+.header,
+.topbar{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 2147483647 !important;
+  background: #020817 !important;
+}
+
+body.light .site-header,
+body.light header.site-header,
+body.light .header,
+body.light .topbar{
+  background: #ffffff !important;
+}
+
+body{
+  padding-top: 96px !important;
+}
+
+@media(max-width: 600px){
+  body{
+    padding-top: 88px !important;
+  }
+}
+
+/* Painel acessibilidade sem duplicar/estourar */
+.access-panel{
+  position: fixed !important;
+  top: 110px !important;
+  left: 16px !important;
+  right: 16px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: calc(100vh - 140px) !important;
+  overflow-y: auto !important;
+  z-index: 2147483646 !important;
+}
+
+/* Contraste mais forte */
+body.contrast{
+  background:#000 !important;
+  color:#fff !important;
+}
+
+body.contrast *{
+  text-shadow:none !important;
+}
+
+body.contrast h1,
+body.contrast h2,
+body.contrast h3,
+body.contrast .section-title{
+  color:#ffff00 !important;
+}
+
+body.contrast .card,
+body.contrast .module-card,
+body.contrast .glass-card{
+  background:#000 !important;
+  border:2px solid #fff !important;
+  color:#fff !important;
+}
+
+body.contrast .btn,
+body.contrast button{
+  background:#ffff00 !important;
+  color:#000 !important;
+  border:2px solid #fff !important;
+}
