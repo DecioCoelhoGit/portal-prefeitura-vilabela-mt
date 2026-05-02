@@ -6,6 +6,12 @@
   <title>Portal Prefeitura Vila Bela MT</title>
   <meta name="description" content="Portal institucional da Prefeitura de Vila Bela da Santíssima Trindade - MT. Transparência, notícias, turismo, cultura e gestão pública digital.">
   <link rel="stylesheet" href="css/style.css?v=91">
+
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#020617">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Portal Prefeitura">
 </head>
 
 <body>
@@ -81,5 +87,11 @@
   </footer>
 
   <script src="js/script.js?v=91"></script>
+
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+  </script>
 </body>
 </html>
