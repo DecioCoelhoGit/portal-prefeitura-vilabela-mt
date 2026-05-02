@@ -1,4 +1,30 @@
 {
+  "name": "Portal Prefeitura Vila Bela da Santíssima Trindade MT",
+  "short_name": "Portal Vila Bela",
+  "description": "Portal oficial da Prefeitura de Vila Bela da Santíssima Trindade - MT. Transparência, serviços, turismo e cultura.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1e3a",
+  "theme_color": "#0b1e3a",
+
+  "icons": [
+    {
+      "src": "assets/icons/icon-192-premium.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512-premium.png",
+      "sizes": "512x512",
+ 0
+     "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}{
   "name": "Portal Prefeitura Vila Bela MT",
   "short_name": "Portal Prefeitura",
   "description": "Portal digital institucional da Prefeitura de Vila Bela da Santíssima Trindade MT.",
