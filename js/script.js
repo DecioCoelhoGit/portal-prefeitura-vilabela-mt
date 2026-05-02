@@ -1,4 +1,14 @@
-(function () {
+// PATCH V10 — RESET DE CACHE AUTOMÁTICO
+(function(){
+  const version = "v10";
+  const saved = localStorage.getItem("portal-version");
+
+  if(saved !== version){
+    localStorage.clear();
+    localStorage.setItem("portal-version", version);
+    location.reload();
+  }
+})();(function () {
   "use strict";
 
   function ready(fn) {
