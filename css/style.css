@@ -592,3 +592,68 @@ body.contrast span,
 body.contrast small{
   color:#fff !important;
 }
+
+/* PATCH V9.4 FINAL */
+html, body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden !important;
+}
+
+.site-header,
+.header,
+.topbar{
+  position:sticky !important;
+  top:0 !important;
+  z-index:999999 !important;
+  background:#020817 !important;
+  backdrop-filter:blur(18px);
+}
+
+body.light .site-header,
+body.light .header,
+body.light .topbar{
+  background:#ffffff !important;
+}
+
+body.contrast .site-header,
+body.contrast .header,
+body.contrast .topbar{
+  background:#000 !important;
+  border-bottom:2px solid #fff !important;
+}
+
+main{
+  position:relative;
+  z-index:1;
+}
+
+/* Acessibilidade */
+body.font-a{
+  font-size:16px !important;
+}
+
+body.font-ap{
+  font-size:18px !important;
+}
+
+body.font-app{
+  font-size:20px !important;
+}
+
+body.font-ap h1,
+body.font-app h1{
+  line-height:1.08 !important;
+}
+
+.access-panel{
+  max-width:calc(100vw - 32px) !important;
+  left:16px !important;
+  right:16px !important;
+  transform:none !important;
+  z-index:999998 !important;
+}
+
+.access-panel button{
+  min-height:48px !important;
+}
