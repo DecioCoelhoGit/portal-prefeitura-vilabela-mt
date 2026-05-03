@@ -1,14 +1,5 @@
-// PATCH V10 — RESET DE CACHE AUTOMÁTICO
-(function(){
-  const version = "v10";
-  const saved = localStorage.getItem("portal-version");
-
-  if(saved !== version){
-    localStorage.clear();
-    localStorage.setItem("portal-version", version);
-    location.reload();
-  }
-})();(function () {
+/* SCRIPT V12.1 — Portal Prefeitura Vila Bela MT */
+(function () {
   "use strict";
 
   function ready(fn) {
@@ -17,151 +8,123 @@
   }
 
   ready(function () {
-    const menuBtn = document.getElementById("menuToggle");
-    const themeBtn = document.getElementById("themeToggle");
-    const accessBtn = document.getElementById("accessBtn");
-    const nav = document.getElementById("nav");
-    const accessPanel = document.getElementById("accessPanel");
+    const body = document.body;
 
-    const savedTheme = localStorage.getItem("portal-theme");
-    if (savedTheme === "light") {
-      document.body.classList.add("light");
-      if (themeBtn) themeBtn.textContent = "☀️";
+    const btnMenu =
+      document.getElementById("btnMenu") ||
+      document.getElementById("menuToggle");
+
+    const menu =
+      document.getElementById("menu") ||
+      document.getElementById("nav") ||
+      document.querySelector(".nav-menu");
+
+    const btnTema =
+      document.getElementById("btnTema") ||
+      document.getElementById("themeToggle");
+
+    const btnAcess =
+      document.getElementById("btnAcessibilidade") ||
+      document.getElementById("accessBtn");
+
+    const painelAcess =
+      document.getElementById("acessibilidade") ||
+      document.getElementById("accessPanel") ||
+      document.querySelector(".access-panel");
+
+    // TEMA PERSISTENTE
+    const temaSalvo = localStorage.getItem("portal-tema") || "dark";
+    aplicarTema(temaSalvo);
+
+    function aplicarTema(tema) {
+      body.classList.remove("light", "dark");
+      body.classList.add(tema);
+      localStorage.setItem("portal-tema", tema);
+
+      if (btnTema) {
+        btnTema.textContent = tema === "light" ? "☀️" : "🌙";
+        btnTema.setAttribute("aria-label", tema === "light" ? "Tema claro ativo" : "Tema escuro ativo");
+      }
     }
 
-    if (menuBtn && nav) {
-      menuBtn.addEventListener("click", function (e) {
+    if (btnTema) {
+      btnTema.onclick = function (e) {
         e.preventDefault();
-        nav.classList.toggle("active");
-        menuBtn.textContent = nav.classList.contains("active") ? "×" : "☰";
+        e.stopPropagation();
+        aplicarTema(body.classList.contains("light") ? "dark" : "light");
+      };
+    }
+
+    // MENU MOBILE
+    if (btnMenu && menu) {
+      btnMenu.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        menu.classList.toggle("open");
+        menu.classList.toggle("active");
+        btnMenu.textContent = menu.classList.contains("open") || menu.classList.contains("active") ? "×" : "☰";
+      };
+
+      menu.querySelectorAll("a").forEach(function (link) {
+        link.onclick = function () {
+          menu.classList.remove("open", "active");
+          btnMenu.textContent = "☰";
+        };
       });
     }
 
-    if (themeBtn) {
-      themeBtn.addEventListener("click", function (e) {
+    // ACESSIBILIDADE
+    if (btnAcess && painelAcess) {
+      btnAcess.onclick = function (e) {
         e.preventDefault();
-        document.body.classList.toggle("light");
+        e.stopPropagation();
 
-        const isLight = document.body.classList.contains("light");
-        localStorage.setItem("portal-theme", isLight ? "light" : "dark");
-        themeBtn.textContent = isLight ? "☀️" : "🌙";
-      });
+        painelAcess.classList.toggle("open");
+        painelAcess.classList.toggle("show");
+      };
+
+      painelAcess.onclick = function (e) {
+        e.stopPropagation();
+      };
     }
 
-    if (accessBtn && accessPanel) {
-      accessBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        accessPanel.classList.toggle("show");
-      });
-    }
+    document.addEventListener("click", function () {
+      if (menu) {
+        menu.classList.remove("open", "active");
+        if (btnMenu) btnMenu.textContent = "☰";
+      }
+
+      if (painelAcess) {
+        painelAcess.classList.remove("open", "show");
+      }
+    });
+
+    // FUNÇÕES GLOBAIS DOS BOTÕES A / A+ / A++
+    window.setFont = function (scale) {
+      body.style.fontSize = scale + "em";
+      localStorage.setItem("portal-font-scale", scale);
+    };
+
+    window.setContrast = function () {
+      body.classList.toggle("contrast");
+      localStorage.setItem(
+        "portal-contrast",
+        body.classList.contains("contrast") ? "on" : "off"
+      );
+    };
+
+    window.resetAccess = function () {
+      body.style.fontSize = "1em";
+      body.classList.remove("contrast");
+      localStorage.removeItem("portal-font-scale");
+      localStorage.removeItem("portal-contrast");
+    };
+
+    const fonteSalva = localStorage.getItem("portal-font-scale");
+    if (fonteSalva) body.style.fontSize = fonteSalva + "em";
+
+    const contrasteSalvo = localStorage.getItem("portal-contrast");
+    if (contrasteSalvo === "on") body.classList.add("contrast");
   });
-
-  window.setFont = function (size) {
-    document.body.style.fontSize = size + "em";
-    localStorage.setItem("portal-font", size);
-  };
-
-  window.setContrast = function () {
-    document.body.classList.toggle("contrast");
-  };
-
-  window.resetAccess = function () {
-    document.body.style.fontSize = "1em";
-    document.body.classList.remove("contrast");
-    localStorage.removeItem("portal-font");
-  };
 })();
-
-/* PATCH V9.3 — FONTE ACESSÍVEL */
-window.setFont = function(scale){
-  document.body.classList.remove("font-normal","font-large","font-xlarge");
-  if(scale === 1.15){
-    document.body.classList.add("font-large");
-    localStorage.setItem("portal-font-class","font-large");
-  }else if(scale === 1.3){
-    document.body.classList.add("font-xlarge");
-    localStorage.setItem("portal-font-class","font-xlarge");
-  }else{
-    document.body.classList.add("font-normal");
-    localStorage.setItem("portal-font-class","font-normal");
-  }
-};
-
-window.resetAccess = function(){
-  document.body.classList.remove("font-normal","font-large","font-xlarge","contrast");
-  document.body.classList.add("font-normal");
-  localStorage.removeItem("portal-font-class");
-};
-
-document.addEventListener("DOMContentLoaded", function(){
-  const savedFont = localStorage.getItem("portal-font-class");
-  if(savedFont){
-    document.body.classList.add(savedFont);
-  }
-});
-
-/* PATCH V9.4 FINAL — Acessibilidade */
-window.setFont = function(size){
-  document.body.classList.remove("font-a","font-ap","font-app");
-
-  if(size === 1 || size === "1"){
-    document.body.classList.add("font-a");
-    localStorage.setItem("portal-font-size","font-a");
-  }
-
-  if(size === 1.15 || size === "1.15"){
-    document.body.classList.add("font-ap");
-    localStorage.setItem("portal-font-size","font-ap");
-  }
-
-  if(size === 1.3 || size === "1.3"){
-    document.body.classList.add("font-app");
-    localStorage.setItem("portal-font-size","font-app");
-  }
-};
-
-window.resetAccess = function(){
-  document.body.classList.remove("font-a","font-ap","font-app","contrast");
-  localStorage.removeItem("portal-font-size");
-};
-
-document.addEventListener("DOMContentLoaded", function(){
-  const saved = localStorage.getItem("portal-font-size");
-  if(saved){
-    document.body.classList.add(saved);
-  }
-});
-
-/* PATCH V9.5 FINAL — troca direta dos botões A */
-document.addEventListener("DOMContentLoaded", function(){
-  document.querySelectorAll("button, .access-panel button").forEach(function(btn){
-    const txt = (btn.textContent || "").trim();
-
-    if(txt === "A"){
-      btn.onclick = function(e){
-        e.preventDefault();
-        document.body.classList.remove("font-ap","font-app");
-        document.body.classList.add("font-a");
-        localStorage.setItem("portal-font-size","font-a");
-      };
-    }
-
-    if(txt === "A+"){
-      btn.onclick = function(e){
-        e.preventDefault();
-        document.body.classList.remove("font-a","font-app");
-        document.body.classList.add("font-ap");
-        localStorage.setItem("portal-font-size","font-ap");
-      };
-    }
-
-    if(txt === "A++"){
-      btn.onclick = function(e){
-        e.preventDefault();
-        document.body.classList.remove("font-a","font-ap");
-        document.body.classList.add("font-app");
-        localStorage.setItem("portal-font-size","font-app");
-      };
-    }
-  });
-});
