@@ -128,3 +128,27 @@
     if (contrasteSalvo === "on") body.classList.add("contrast");
   });
 })();
+
+window.setFont = function (scale) {
+  document.documentElement.classList.remove("font-normal", "font-plus", "font-plusplus");
+
+  if (scale === 1) {
+    document.documentElement.classList.add("font-normal");
+  }
+
+  if (scale === 1.15) {
+    document.documentElement.classList.add("font-plus");
+  }
+
+  if (scale === 1.3) {
+    document.documentElement.classList.add("font-plusplus");
+  }
+
+  localStorage.setItem("portal-font-scale", String(scale));
+};
+
+window.resetAccess = function () {
+  document.documentElement.classList.remove("font-normal", "font-plus", "font-plusplus", "contrast");
+  document.body.classList.remove("contrast");
+  localStorage.removeItem("portal-font-scale");
+};
