@@ -152,3 +152,59 @@ window.resetAccess = function () {
   document.body.classList.remove("contrast");
   localStorage.removeItem("portal-font-scale");
 };
+
+/* ==============================
+   V12.2 DEBUG MASTER
+   Portal Prefeitura Vila Bela MT
+============================== */
+
+window.portalDebug = function () {
+  console.log("✅ Portal Debug ativo");
+  console.log("HTML classes:", document.documentElement.className);
+  console.log("BODY classes:", document.body.className);
+  console.log("menuToggle:", document.getElementById("menuToggle"));
+  console.log("themeToggle:", document.getElementById("themeToggle"));
+  console.log("accessBtn:", document.getElementById("accessBtn"));
+  console.log("accessPanel:", document.getElementById("accessPanel"));
+  console.log("setFont:", typeof window.setFont);
+  console.log("setContrast:", typeof window.setContrast);
+  console.log("resetAccess:", typeof window.resetAccess);
+};
+
+window.setFont = function (scale) {
+  console.log("🔠 setFont acionado:", scale);
+
+  document.documentElement.classList.remove("font-normal", "font-plus", "font-plusplus");
+
+  if (String(scale) === "1") document.documentElement.classList.add("font-normal");
+  if (String(scale) === "1.15") document.documentElement.classList.add("font-plus");
+  if (String(scale) === "1.3") document.documentElement.classList.add("font-plusplus");
+
+  localStorage.setItem("portal-font-scale", String(scale));
+
+  console.log("HTML classes agora:", document.documentElement.className);
+};
+
+window.setContrast = function () {
+  console.log("⚡ contraste acionado");
+  document.documentElement.classList.toggle("contrast");
+  document.body.classList.toggle("contrast");
+};
+
+window.resetAccess = function () {
+  console.log("♻️ reset acessibilidade acionado");
+  document.documentElement.classList.remove("font-normal", "font-plus", "font-plusplus", "contrast");
+  document.body.classList.remove("contrast");
+  localStorage.removeItem("portal-font-scale");
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("🚀 V12.2 DEBUG MASTER carregado");
+
+  const savedScale = localStorage.getItem("portal-font-scale");
+  if (savedScale) {
+    window.setFont(savedScale);
+  }
+
+  window.portalDebug();
+});
