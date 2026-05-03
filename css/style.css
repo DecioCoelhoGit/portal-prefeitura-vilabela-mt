@@ -766,3 +766,29 @@ body.contrast button{
   color:#000 !important;
   border:2px solid #fff !important;
 }
+
+html.font-plus body {
+  font-size: 115% !important;
+}
+
+html.font-plusplus body {
+  font-size: 130% !important;
+}
+
+html.font-plus h1,
+html.font-plus h2,
+html.font-plus h3,
+html.font-plus p,
+html.font-plus a,
+html.font-plus button {
+  font-size: 115% !important;
+}
+
+html.font-plusplus h1,
+html.font-plusplus h2,
+html.font-plusplus h3,
+html.font-plusplus p,
+html.font-plusplus a,
+html.font-plusplus button {
+  font-size: 130% !important;
+}
