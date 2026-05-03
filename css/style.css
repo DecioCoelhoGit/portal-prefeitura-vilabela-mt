@@ -792,3 +792,44 @@ html.font-plusplus a,
 html.font-plusplus button {
   font-size: 130% !important;
 }
+
+/* ==============================
+   V12.2 FONT DEBUG MASTER
+============================== */
+
+html.font-normal {
+  font-size: 100% !important;
+}
+
+html.font-plus {
+  font-size: 115% !important;
+}
+
+html.font-plusplus {
+  font-size: 130% !important;
+}
+
+html.font-plus *,
+html.font-plusplus * {
+  line-height: 1.25 !important;
+}
+
+html.font-plus .hero-title,
+html.font-plus h1,
+html.font-plus h2,
+html.font-plus h3,
+html.font-plus p,
+html.font-plus a,
+html.font-plus button {
+  font-size: 115% !important;
+}
+
+html.font-plusplus .hero-title,
+html.font-plusplus h1,
+html.font-plusplus h2,
+html.font-plusplus h3,
+html.font-plusplus p,
+html.font-plusplus a,
+html.font-plusplus button {
+  font-size: 130% !important;
+}
