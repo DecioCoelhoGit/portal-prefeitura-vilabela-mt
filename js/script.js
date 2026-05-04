@@ -129,29 +129,44 @@
   });
 })();
 
+
 window.setFont = function (scale) {
-  document.documentElement.classList.remove("font-normal", "font-plus", "font-plusplus");
+  const value = Number(scale) || 1;
 
-  if (scale === 1) {
-    document.documentElement.classList.add("font-normal");
-  }
+  document.documentElement.style.fontSize = (16 * value) + "px";
+  document.body.style.fontSize = value + "rem";
 
-  if (scale === 1.15) {
-    document.documentElement.classList.add("font-plus");
-  }
+  localStorage.setItem("portal-font-scale", value);
+};
 
-  if (scale === 1.3) {
-    document.documentElement.classList.add("font-plusplus");
-  }
-
-  localStorage.setItem("portal-font-scale", String(scale));
+window.setContrast = function () {
+  document.body.classList.toggle("contrast");
+  localStorage.setItem(
+    "portal-contrast",
+    document.body.classList.contains("contrast") ? "on" : "off"
+  );
 };
 
 window.resetAccess = function () {
-  document.documentElement.classList.remove("font-normal", "font-plus", "font-plusplus", "contrast");
+  document.documentElement.style.fontSize = "16px";
+  document.body.style.fontSize = "1rem";
   document.body.classList.remove("contrast");
+
   localStorage.removeItem("portal-font-scale");
+  localStorage.removeItem("portal-contrast");
 };
+
+function restoreFont() {
+  const savedScale = localStorage.getItem("portal-font-scale");
+  if (savedScale) {
+    window.setFont(savedScale);
+  }
+
+  if (localStorage.getItem("portal-contrast") === "on") {
+    document.body.classList.add("contrast");
+  }
+}
+
 
 /* ==============================
    V12.2 DEBUG MASTER
