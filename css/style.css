@@ -797,39 +797,41 @@ html.font-plusplus button {
    V12.2 FONT DEBUG MASTER
 ============================== */
 
-html.font-normal {
-  font-size: 100% !important;
+/* ===== ACESSIBILIDADE V12.3 — FORÇA GLOBAL ===== */
+
+html.font-a,
+html.font-a body {
+  font-size: 16px !important;
 }
 
-html.font-plus {
-  font-size: 115% !important;
+html.font-aplus,
+html.font-aplus body {
+  font-size: 18px !important;
 }
 
-html.font-plusplus {
-  font-size: 130% !important;
+html.font-aplusplus,
+html.font-aplusplus body {
+  font-size: 21px !important;
 }
 
-html.font-plus *,
-html.font-plusplus * {
-  line-height: 1.25 !important;
+html.font-aplus h1,
+html.font-aplus h2,
+html.font-aplus h3,
+html.font-aplus p,
+html.font-aplus a,
+html.font-aplus button,
+html.font-aplus .card,
+html.font-aplus .module-card {
+  font-size: 112% !important;
 }
 
-html.font-plus .hero-title,
-html.font-plus h1,
-html.font-plus h2,
-html.font-plus h3,
-html.font-plus p,
-html.font-plus a,
-html.font-plus button {
-  font-size: 115% !important;
-}
-
-html.font-plusplus .hero-title,
-html.font-plusplus h1,
-html.font-plusplus h2,
-html.font-plusplus h3,
-html.font-plusplus p,
-html.font-plusplus a,
-html.font-plusplus button {
-  font-size: 130% !important;
+html.font-aplusplus h1,
+html.font-aplusplus h2,
+html.font-aplusplus h3,
+html.font-aplusplus p,
+html.font-aplusplus a,
+html.font-aplusplus button,
+html.font-aplusplus .card,
+html.font-aplusplus .module-card {
+  font-size: 128% !important;
 }
