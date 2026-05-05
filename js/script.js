@@ -186,18 +186,27 @@ window.portalDebug = function () {
   console.log("resetAccess:", typeof window.resetAccess);
 };
 
-window.setFont = function (scale) {
-  console.log("🔠 setFont acionado:", scale);
+window.setFont = function (mode) {
+  document.documentElement.classList.remove(
+    "font-a",
+    "font-aplus",
+    "font-aplusplus"
+  );
 
-  document.documentElement.classList.remove("font-normal", "font-plus", "font-plusplus");
+  if (mode === 1 || mode === "1" || mode === "a") {
+    document.documentElement.classList.add("font-a");
+    localStorage.setItem("portal-font-mode", "font-a");
+  }
 
-  if (String(scale) === "1") document.documentElement.classList.add("font-normal");
-  if (String(scale) === "1.15") document.documentElement.classList.add("font-plus");
-  if (String(scale) === "1.3") document.documentElement.classList.add("font-plusplus");
+  if (mode === 1.15 || mode === "1.15" || mode === "aplus") {
+    document.documentElement.classList.add("font-aplus");
+    localStorage.setItem("portal-font-mode", "font-aplus");
+  }
 
-  localStorage.setItem("portal-font-scale", String(scale));
-
-  console.log("HTML classes agora:", document.documentElement.className);
+  if (mode === 1.3 || mode === "1.3" || mode === "aplusplus") {
+    document.documentElement.classList.add("font-aplusplus");
+    localStorage.setItem("portal-font-mode", "font-aplusplus");
+  }
 };
 
 window.setContrast = function () {
